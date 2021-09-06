@@ -24,12 +24,19 @@ const LetterButton = ({
   }, [inputPrompt]);
 
   const userInputHandler = (e) => {
-    console.log(wrongAttempts);
     if (word.includes(letter)) {
+      var uniqueEntry = false;
       for (var i = 0; i < word.length; i++) {
         if (word.charAt(i) === letter) {
+          if (prompt[i] === "_") {
+            uniqueEntry = true;
+          }          
           inputPrompt = setCharAt(inputPrompt, i, letter);
         }
+      }
+      if (!uniqueEntry) {
+        setDisabled(!disabled);
+        setWrongAttempts(wrongAttempts + 1);
       }
       setInputPrompt(inputPrompt);
     } else {
