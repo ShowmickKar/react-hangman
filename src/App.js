@@ -18,24 +18,29 @@ function App() {
     return words[Math.floor(Math.random() * words.length)];
   };
 
+  const inputPromptHintGenerator = (word) => {
+    var hint = [];
+    var n = Math.floor(word.length / 2);
+    while (hint.length < n) {
+      var index = Math.floor(Math.random() * word.length);
+      while (hint.includes(index)) {
+        index = Math.floor(Math.random() * word.length);
+      }
+      hint.push(index);
+    }
+    return hint;
+  }
+
   const newGameHandler = () => {
     var word = generateNewWord();
     while (word.includes(" ") || word.includes("-") || word.length < 3) {
       word = generateNewWord();
     }
-    var p = Math.floor(Math.random() * word.length);
-    var q = Math.floor(Math.random() * word.length);
-    while (p === q) {
-      q = Math.floor(Math.random() * word.length);
-    }
+    var hint = inputPromptHintGenerator(word);
     console.log(`New Word ${word}`);
     var inputPrompt = "";
     for (var i = 0; i < word.length; i++) {
-      if (i === p || i === q) {
-        inputPrompt += word[i];
-      } else {
-        inputPrompt += "_";
-      }
+      inputPrompt += hint.includes(i) ? word[i] : "_";
     }
     setInputPrompt(inputPrompt);
     setInitialPrompt(inputPrompt);
