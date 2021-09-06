@@ -14,7 +14,6 @@ const LetterButton = ({
   const [prompt, setPrompt] = useState(initialPrompt);
 
   useEffect(() => {
-    console.log("Initial Prompt:" + prompt);
     for (var i = 0; i < inputPrompt.length; i++) {
       if (inputPrompt.charAt(i) === letter && prompt[i] === "_") {
         setDisabled(!disabled);
