@@ -98,11 +98,10 @@ function App() {
       <p>
         the word was<div className='correct-word'>{word}</div>
       </p>
-
       <button className='new-game-btn' type='submit' onClick={newGameHandler}>
         play again
       </button>
     </div>
   );
 }
-export default App;
+export default App; 
