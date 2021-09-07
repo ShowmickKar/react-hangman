@@ -82,7 +82,7 @@ function App() {
             onClick={() => {
               setNewWord(true);
             }}
-            className='new-word'>
+            className='btn'>
             New Word
           </button>
         </div>
@@ -98,8 +98,8 @@ function App() {
       <p>
         the word was<div className='correct-word'>{word}</div>
       </p>
-      <button className='new-game-btn' type='submit' onClick={newGameHandler}>
-        play again
+      <button className='btn' onClick={newGameHandler} type="button" autofocus>
+        Play Again
       </button>
     </div>
   );
