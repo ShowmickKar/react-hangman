@@ -6,8 +6,6 @@ root {
 
 body {
   background-color: rgb(24, 93, 139);
-  /* background-color: rgb(189, 18, 18); */
-  /* background-color: rgb(156, 58, 1); */
   align-items: center;
   justify-content: center;
   display: flex;
@@ -89,7 +87,7 @@ h2 {
   letter-spacing: 8px;
 }
 
-.new-word {
+.btn {
   font-size: 18px;
   border: none;
   outline: none;
@@ -101,7 +99,7 @@ h2 {
   border-radius: 8px;
 }
 
-.new-word:before {
+.btn:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -129,19 +127,19 @@ h2 {
   border-radius: 10px;
 }
 
-.new-word:active {
+.btn:active {
   color: #000;
 }
 
-.new-word:active:after {
+.btn:active:after {
   background: transparent;
 }
 
-.new-word:hover:before {
+.btn:hover:before {
   opacity: 1;
 }
 
-.new-word:after {
+.btn:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -193,29 +191,12 @@ h2 {
   padding: 10px;
 }
 
-.new-game-btn {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  color: rgb(216, 202, 74);
-  border: #002bff solid 3px;
-  border-radius: 12px;
-  text-transform: capitalize;
-  font-weight: bold;
-}
-
-.new-game-btn:hover {
-  background-color: #111;
-  color: rgb(199, 9, 34);
-  border: #002bff solid 3px;
-  box-shadow: 3px 3px 35px #ffffff;
-}
-
 p {
   text-transform: uppercase;
 }
 
 .correct-word {
-  color: rgb(216, 202, 74);
+  color: rgb(124, 119, 70);
   font-weight: bold;
   box-shadow: 3px 3px 35px #888888;
 }
